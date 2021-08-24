@@ -354,8 +354,8 @@ React JS
 
                         able to add an item or remove one.
 
-        React Component Life Cycle Methods
-        ------------------------------------------------------------------------
+    React Component Life Cycle Methods
+    ------------------------------------------------------------------------
 
             constructor()               //compoennt state initialization
                 ↓
@@ -384,8 +384,8 @@ React JS
                             ↓
                         componentWillUnmount()
         
-            React Hooks
-            -------------------------------------------------
+    React Hooks
+    -------------------------------------------------
 
                 enable the functional component
                 to have lifecycle methods and local
@@ -421,3 +421,33 @@ React JS
 
                         if an empty array is passed the function executes only once
                         after the first render.
+
+    json-server
+    -----------------------------------------------------------------------
+
+        is a javascript tool that can generate fake rest endpoints
+        from a .json file, only for the sake of practising
+        rest api calsls, -NOT FOR REAL TIME PURPOISE.
+
+        npm install json-server --save
+
+        json-server --port portNumber --watch dataFile.json
+
+    Integrating React with REST api Calls - axios
+    -----------------------------------------------------------------------
+
+        AXIOS is an independent JS library to do rest api calls.
+
+        npm install axios --save
+
+        axios.get(url) : Promise
+        axios.put(url,reqBody) : Promise
+        axios.post(url,reqBody) : Promise
+        axios.delete(url,reqBody) : Promise
+    
+    React State Management - Redux
+    ------------------------------------------------------------------------
+
+
+
+        

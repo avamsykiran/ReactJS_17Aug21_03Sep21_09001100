@@ -30,11 +30,11 @@ class TxnList extends React.Component{
     }
 
     componentDidMount(){
-        console.log("Component first time rendering is complete");
+        console.log("TxnList Component first time rendering is complete");
     }
 
     componentDidUpdate(){
-        console.log("Component re-rednering done jsut now");
+        console.log("TxnList Component re-rendering done jsut now");
     }
 
     render(){

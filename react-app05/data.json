@@ -1,0 +1,46 @@
+{
+  "txns": [
+    {
+      "id": 1,
+      "header": "Salary",
+      "amount": 55000,
+      "type": "INCOME"
+    },
+    {
+      "id": 2,
+      "header": "Shares Dividant",
+      "amount": 35000,
+      "type": "INCOME"
+    },
+    {
+      "id": 3,
+      "header": "Rent",
+      "amount": 5000,
+      "type": "EXPENSE"
+    },
+    {
+      "id": 4,
+      "header": "Fuel",
+      "amount": 4500,
+      "type": "EXPENSE"
+    },
+    {
+      "id": 5,
+      "header": "rocessaries",
+      "amount": 5000,
+      "type": "EXPENSE"
+    },
+    {
+      "header": "BirthDay Party",
+      "amount": 58000,
+      "type": "EXPENSE",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "header": "Bonus",
+      "amount": 12000,
+      "type": "INCOME"
+    }
+  ]
+}
