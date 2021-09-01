@@ -1,25 +1,25 @@
+import {connect} from 'react-redux'
 
-const TxnSummary = ({txns}) => {
+const TxnSummary = ({ totalIncome, totalExpense, balance }) => (
+    <tfoot>
+        <tr>
+            <th colSpan="2">Total</th>
+            <th className="text-right">{totalIncome}</th>
+            <th className="text-right">{totalExpense}</th>
+        </tr>
+        <tr>
+            <th colSpan="3">Balance</th>
+            <th className="text-right">{balance}</th>
+        </tr>
+    </tfoot>
+);
 
-    let incomes = txns.filter(t=>t.type==='INCOME')
-    let totalIncome = incomes.length===0?0:incomes.map(t => t.amount).reduce((a1,a2)=>a1+a2);
-    let expenses = txns.filter(t=>t.type==='EXPENSE');
-    let totalExpense = expenses.length===0?0:expenses.map(t => t.amount).reduce((a1,a2)=>a1+a2);
-    let balance = totalIncome-totalExpense;
+const mapStateToProps = state => ({
+    totalIncome:state.totalIncome,
+    totalExpense:state.totalExpense,
+    balance:state.balance
+});
 
-    return (
-        <tfoot>
-            <tr>
-                <th colSpan="2">Total</th>
-                <th className="text-right">{totalIncome}</th>
-                <th className="text-right">{totalExpense}</th>
-            </tr>
-            <tr>
-                <th colSpan="3">Balance</th>
-                <th className="text-right">{balance}</th>
-            </tr>
-        </tfoot>
-    );
-};
+const mapDispatchToProps = undefined;
 
-export default TxnSummary;
+export default connect(mapStateToProps,mapDispatchToProps)(TxnSummary);

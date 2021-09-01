@@ -1,3 +1,5 @@
+import {connect} from 'react-redux';
+import { createDeleteTxnAction} from '../stateManagement/actions';
 
 const TxnRecord = ({t,remove}) => (
     <tr>
@@ -15,4 +17,10 @@ const TxnRecord = ({t,remove}) => (
     </tr>
 );
 
-export default TxnRecord;
+const mapStateToProps = undefined;
+
+const mapDispatchToProps = dispatch => ({
+    remove: txnId => dispatch(createDeleteTxnAction(txnId))
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(TxnRecord);

@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import {connect} from 'react-redux';
+import { createAddTxnAction } from '../stateManagement/actions';
 
 const NewTxn = ({addTxn}) => {
 
@@ -7,14 +9,6 @@ const NewTxn = ({addTxn}) => {
     let [amount,setAmount]=useState(0);
     let [type,setType]=useState('');
 
-    useEffect(()=>{
-        console.log("NewTxn component got rendered for the first time");
-    },[]); //equivlent to componentDidMount
-
-    useEffect(()=>{
-        console.log("NewTxn component got re-rendered as amount field is updated");
-    },[amount]); //equivlent to componentDidUpdate
-        
     const add = () => {
         addTxn({id,header,amount,type});
         setId(0);
@@ -49,4 +43,10 @@ const NewTxn = ({addTxn}) => {
     );
 }
 
-export default NewTxn;
+const mapStateToProps = undefined;
+
+const mapDispatchToProps = dispatch => ({
+    addTxn: txn => dispatch(createAddTxnAction(txn))
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(NewTxn);

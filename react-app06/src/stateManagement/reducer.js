@@ -27,16 +27,16 @@ const txnsReducer = (state = initialState(), action) => {
 
     switch (action.type) {
         case ADD_TXN:
-            affectedTxns = [...this.state.txns,action.txn];
+            affectedTxns = [...state.txns,action.txn];
             break;
         case DELETE_TXN:
-            affectedTxns = this.state.txns.filter(t => t.id!==action.txnId);
+            affectedTxns = state.txns.filter(t => t.id!==action.txnId);
             break;
         case UPDATE_TXN:
-            affectedTxns = this.state.txns.map(t => t.id===action.txn.id?action.txn:t);
+            affectedTxns = state.txns.map(t => t.id===action.txn.id?action.txn:t);
             break;
         default:
-            affectedTxns = [...this.state.txns];
+            affectedTxns = [...state.txns];
             break;
     }
 
