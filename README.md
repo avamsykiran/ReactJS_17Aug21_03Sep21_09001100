@@ -571,7 +571,7 @@ React JS
     thunk   means a function that returns another function.
 
     action      can be an object
-                can be a function
+                can be a function (thunk)
 
                 if the action is an object, it is directed to the reducer
                 if the action is a function, that function is executed and it is
@@ -579,16 +579,16 @@ React JS
                             action objects to the reducer.
 
         
-            store  -----------mapStateToProps,mapDispathToProps------>   component1         
+            store  -----------mapStateToProps,mapDispathToProps--------->   component1         
                 |                 (suppy the state and dispatch)                  |          
                 |                                                                 |      
                 |                                                                 |    
                 |                                                                 |          
-                |                                                         dispatch(action)    
+                |                                                         dispatch(actionObj)    
                 |                                                                 |          
                 |                                                                 |
                 |                                                         --------------------
-                |                                          (action object)|                  |(action fucntion)
+                |                                          (action object)|                  |(actionFucntion)
                 |                                                         |                  |
                 |<------modified state ---------- reducer <-----(action)--|                  |
                                                         | <---(action indicating WAIT)-------|
